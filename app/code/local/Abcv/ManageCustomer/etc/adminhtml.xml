@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--<config>
+    <menu>
+        <abcv_managecustomer>
+            <title>May</title>
+            <sort_order>100</sort_order>
+            <children>
+                <test>
+                    <title>Test</title>
+                    <action>adminhtml/ajaxsavedtemplate/index</action>
+                    <sort_order>0</sort_order>
+                </test>
+            </children>
+        </abcv_managecustomer>
+    </menu>
+</config>-->

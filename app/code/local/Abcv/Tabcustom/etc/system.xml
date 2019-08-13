@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<tabconfig translate="label" module="tabcustom">
+			<label>ABCV Custom Field</label>
+			<sort_order>99999</sort_order>
+		</tabconfig>
+	</tabs>	
+	<sections>
+        <general>
+            <groups>
+                <example>
+                    <label>Adding a Group</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                    
+                </example>
+            </groups>
+        </general>	
+		<tabcustom_options translate="label" module="tabcustom">
+			<label>Manage Custom Field Message</label>
+			<tab>tabconfig</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>1000</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+			<messages translate="label">
+				<label>Manage Custom Field In Public Site</label>
+				<frontend_type>text</frontend_type>
+				<sort_order>1</sort_order>
+				<show_in_default>1</show_in_default>
+				<show_in_website>1</show_in_website>
+				<show_in_store>1</show_in_store>                
+				<fields>
+					<header_text translate="label tooltip comment">
+						<label>Header custom field</label>
+						<show_in_default>1</show_in_default>
+						<show_in_website>1</show_in_website>
+						<show_in_store>1</show_in_store>
+						<frontend_type>text</frontend_type>
+						<sort_order>1</sort_order>
+					</header_text>
+					<top_text translate="label tooltip comment">
+						<label>Top message in public site</label>
+						<show_in_default>1</show_in_default>
+						<show_in_website>1</show_in_website>
+						<show_in_store>1</show_in_store>
+						<frontend_type>Textarea</frontend_type>
+						<sort_order>2</sort_order>
+					</top_text>
+					<label_text translate="label tooltip comment">
+						<label>Label of checkbox</label>
+						<show_in_default>1</show_in_default>
+						<show_in_website>1</show_in_website>
+						<show_in_store>1</show_in_store>
+						<frontend_type>text</frontend_type>
+						<sort_order>3</sort_order>
+					</label_text>
+					<bottom_text translate="label tooltip comment">
+						<label>Bottom message in public site</label>
+						<show_in_default>1</show_in_default>
+						<show_in_website>1</show_in_website>
+						<show_in_store>1</show_in_store>
+						<frontend_type>Textarea</frontend_type>
+						<sort_order>4</sort_order>
+					</bottom_text>
+					<enable_text translate="label tooltip comment">
+						<label>Enable Custom Field</label>
+						<frontend_type>select</frontend_type>
+						<sort_order>5</sort_order>
+						<show_in_default>1</show_in_default>
+						<show_in_website>1</show_in_website>
+						<show_in_store>1</show_in_store>
+						<source_model>adminhtml/system_config_source_yesno</source_model>
+					</enable_text>
+				</fields>                 
+			</messages>
+			</groups>
+		</tabcustom_options>
+	</sections>		
+</config>

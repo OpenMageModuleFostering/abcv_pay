@@ -1,0 +1,34 @@
+<config>
+   <modules>
+       <Abcv_ManageCustomer>
+           <version>0.1.0</version>
+       </Abcv_ManageCustomer>
+   </modules>
+   <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <abcv_managecustomer before="Mage_Adminhtml">Abcv_ManageCustomer_Adminhtml</abcv_managecustomer>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+ <adminhtml>
+    <layout>
+           <updates>
+               <managecustomer>
+                  <file>abcv/managecustomer.xml</file>
+               </managecustomer>
+           </updates>
+       </layout>
+   </adminhtml>  
+   <global>
+       <blocks>
+           <managecustomer>
+               <class>Abcv_ManageCustomer_Block</class>
+           </managecustomer>
+       </blocks>
+ </global>
+</config>

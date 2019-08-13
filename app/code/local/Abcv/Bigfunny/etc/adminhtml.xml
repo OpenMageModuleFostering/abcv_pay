@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <editor>
+            <children>
+                <!-- Here, I like to use the namespacename_modulename_controllername naming convention -->
+                <abcv_bigfunny_bigfunny translate="title" module="abcv_bigfunny">
+                    <!-- This is how the menu text will be displayed -->
+                    <title>Manage Bigfunny</title>
+					<sort_order>10</sort_order>
+                    <!-- This is the URL of what we want the menu item to link to -->
+                    <action>adminhtml/bigfunny</action>
+                </abcv_bigfunny_bigfunny>
+            </children>
+        </editor>
+    </menu>
+     
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <!-- Same as above, but instead of referencing the config/menu node, you reference the acl/resources node of adminhtml.xml -->
+                    <sales>
+                        <children>
+                            <!-- Keep the same naming convention as above -->
+                            <abcv_bigfunny_bigfunny>
+                                <!-- This is how the ACL text will be displayed on System > Permissions > Roles > Role > Role Resources -->
+                                <title>Bigfunny</title>
+                            </abcv_bigfunny_bigfunny>
+                        </children>
+                    </sales>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

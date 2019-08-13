@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    Mage
+ * @package     Mage_Sitemap
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+   
+    <sections>
+        <abcv_section module="editor" translate="label">
+            <label>DYO Editor</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>catalog</tab>
+            <groups>
+                <editor_option translate="label">
+                    <label>Editor Options </label>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <design_online_btn translate="label tooltip comment">
+                            <label>Design Button Label</label>
+                            <comment>This text will show in fontend</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                        </design_online_btn>
+                        <warning_mess translate="label tooltip comment">
+                            <label>Leaving Editor Warning Message</label>
+                            <comment>This text will show when user in Editor Page and leave it without save.</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Textarea</frontend_type>
+                            <sort_order>2</sort_order>
+                        </warning_mess>
+                        <undo_redo_limit translate="label tooltip comment">
+                            <label>Number Of Undo/Redo</label>
+                            <comment>This is number time undo/redo on Editor Page.</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>3</sort_order>
+                        </undo_redo_limit>
+                        <upload_number_limit translate="label tooltip comment">
+                            <label>Number Of Upload Images On Editor Page And Manage Template Of Admin</label>
+                            <comment>This is number of images the user upload one time on Editor Page/ And Manage Template Of Admin.</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>4</sort_order>
+                        </upload_number_limit>
+                        <google_api_client_id translate="label tooltip comment">
+                            <label>Google API Client ID</label>
+                            <comment>Google API Client ID to access Google Drive</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Text</frontend_type>
+                            <sort_order>5</sort_order>
+                        </google_api_client_id>
+                        
+                        <google_api_client_secret translate="label tooltip comment">
+                            <label>Google API Client Secret</label>
+                            <comment>Google API Client Secret to access Google Drive</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Text</frontend_type>
+                            <sort_order>6</sort_order>
+                        </google_api_client_secret>
+                        
+                        <instagram_api_client_id translate="label tooltip comment">
+                            <label>Instagram API Client ID</label>
+                            <comment>Instagram API Client ID to access Instagram</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Text</frontend_type>
+                            <sort_order>7</sort_order>
+                        </instagram_api_client_id>
+                        
+                        <instagram_api_client_secret translate="label tooltip comment">
+                            <label>Instagram API Client Secret</label>
+                            <comment>Instagram API Client Secret to access Instagram</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Text</frontend_type>
+                            <sort_order>8</sort_order>
+                        </instagram_api_client_secret>
+                    </fields>
+                </editor_option>
+                <image_option translate="label">
+                    <label>Image Upload Limit</label>
+                    <sort_order>3</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <img_size_limit translate="label tooltip comment">
+                            <label>Maximum File Size(MB)</label>
+                            <comment>Maximum image file size per upload.</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>1</sort_order>
+                        </img_size_limit>
+                        <img_max_w translate="label tooltip comment">
+                            <label>Maximum Width(pixel)</label>
+                            <comment>Maximum width of an upload image.</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>2</sort_order>
+                        </img_max_w>
+                        <img_max_h translate="label tooltip comment">
+                            <label>Maximum Height(pixel)</label>
+                            <comment>Maximum height of an upload image.</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>3</sort_order>
+                        </img_max_h>
+                        <img_size_min translate="label tooltip comment">
+                            <label>Minimum File Size(KB)</label>
+                            <comment>Minimum image file size per upload.</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>4</sort_order>
+                        </img_size_min>
+                        <img_min_w translate="label tooltip comment">
+                            <label>Minimum Width(pixel)</label>
+                            <comment>Minimum width of an upload image.</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>5</sort_order>
+                        </img_min_w>
+                        <img_min_h translate="label tooltip comment">
+                            <label>Minimum Height(pixel)</label>
+                            <comment>Minimum height of an upload image.</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>Text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>6</sort_order>
+                        </img_min_h>
+                    </fields>
+                </image_option>
+                <product_option translate="label">
+                    <label>DYO Product Options</label>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <show_link translate="label tooltip comment">
+                            <label>Show "Add Another..." link in cart page</label>
+                            <comment></comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                        </show_link>
+                    </fields>
+                </product_option>
+            </groups>
+        </abcv_section>
+    </sections>
+</config>

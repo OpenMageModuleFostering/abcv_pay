@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <abcv_bigfunny>
+            <version>1.0.0</version>
+        </abcv_bigfunny>
+    </modules>
+     
+    <global>
+        <helpers>
+            <abcv_bigfunny>
+                <!-- This is where we define our helper directory -->
+                <class>Abcv_Bigfunny_Helper</class>
+            </abcv_bigfunny>
+        </helpers>
+                    
+        <blocks>
+            <abcv_bigfunny>
+                <!-- Set a block definition and lookup directory -->
+                <class>Abcv_Bigfunny_Block</class>
+            </abcv_bigfunny>
+        </blocks>
+         
+        <models>
+            <abcv_bigfunny>
+                <!-- This is where we define our model directory -->
+                <class>Abcv_Bigfunny_Model</class>
+                <!-- Define a resource to create a custom table -->
+                <resourceModel>abcv_bigfunny_mysql14</resourceModel>
+            </abcv_bigfunny>
+             
+            <!-- Here's our resource model we'll use to create a database table -->
+            <abcv_bigfunny_mysql14>
+                <class>Abcv_Bigfunny_Model_Mysql4</class>
+                <entities>
+                    <!-- Let's define our table, we'll call it with the baz name, but the real table is foo_bar_baz -->
+                    <!-- After we define our entity, we can call it with our model by calling abcv_bigfunny/baz -->
+                    <bigfunny>
+                        <table>Bigfunny</table>
+                    </bigfunny>
+                </entities>
+            </abcv_bigfunny_mysql14>
+        </models>
+         
+        <!-- And finally we define our resource setup script 
+        <resources>
+            <abcv_bigfunny_setup>
+                <setup>
+                    <module>abcv_bigfunny</module>
+                </setup>
+            </abcv_bigfunny_setup>
+        </resources>
+		-->
+    </global>
+     
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <!-- This is how we load our Adminhtml controllers -->
+                    <modules>
+                        <abcv_bigfunny before="Mage_Adminhtml">Abcv_Bigfunny_Adminhtml</abcv_bigfunny>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+     
+    <adminhtml>
+        <layout>
+            <updates>
+                <abcv_bigfunny>
+                    <!--
+                    We again keep a nice naming convention and make our module upgrade proof by placing it in a separate folder
+                    - Since we are in the adminhtml node, this will look for the XML file in the app/design/adminhtml/default/default root folder
+                    -->
+                    <file>abcv/bigfunny.xml</file>
+                </abcv_bigfunny>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

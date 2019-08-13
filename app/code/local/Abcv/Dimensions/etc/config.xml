@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <abcv_dimensions>
+            <version>1.0.0</version>
+        </abcv_dimensions>
+    </modules>
+     
+    <global>
+        <helpers>
+            <abcv_dimensions>
+                <!-- This is where we define our helper directory -->
+                <class>Abcv_Dimensions_Helper</class>
+            </abcv_dimensions>
+        </helpers>
+                    
+        <blocks>
+            <abcv_dimensions>
+                <!-- Set a block definition and lookup directory -->
+                <class>Abcv_Dimensions_Block</class>
+            </abcv_dimensions>
+        </blocks>
+         
+        <models>
+            <abcv_dimensions>
+                <!-- This is where we define our model directory -->
+                <class>Abcv_Dimensions_Model</class>
+                <!-- Define a resource to create a custom table -->
+                <resourceModel>abcv_dimensions_mysql14</resourceModel>
+            </abcv_dimensions>
+             
+            <!-- Here's our resource model we'll use to create a database table -->
+            <abcv_dimensions_mysql14>
+                <class>Abcv_Dimensions_Model_Mysql4</class>
+                <entities>
+                    <!-- Let's define our table, we'll call it with the baz name, but the real table is foo_bar_baz -->
+                    <!-- After we define our entity, we can call it with our model by calling abcv_dimensions/baz -->
+                    <dimensions>
+                        <table>Dimensions</table>
+                    </dimensions>
+                </entities>
+            </abcv_dimensions_mysql14>
+        </models>
+         
+        <!-- And finally we define our resource setup script 
+        <resources>
+            <abcv_dimensions_setup>
+                <setup>
+                    <module>abcv_dimensions</module>
+                </setup>
+            </abcv_dimensions_setup>
+        </resources>
+		-->
+    </global>
+     
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <!-- This is how we load our Adminhtml controllers -->
+                    <modules>
+                        <abcv_dimensions before="Mage_Adminhtml">Abcv_Dimensions_Adminhtml</abcv_dimensions>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+     
+    <adminhtml>
+        <layout>
+            <updates>
+                <abcv_dimensions>
+                    <!--
+                    We again keep a nice naming convention and make our module upgrade proof by placing it in a separate folder
+                    - Since we are in the adminhtml node, this will look for the XML file in the app/design/adminhtml/default/default root folder
+                    -->
+                    <file>abcv/dimensions.xml</file>
+                </abcv_dimensions>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/abcv_pay",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "Official Magento Plugin to connect to Payment Service Provider ABCV Pay",
+    "authors": [
+    {
+        "name": "ABCV Company",
+        "email": "dang.nguyen@abcv.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

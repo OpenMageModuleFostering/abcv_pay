@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config>
+  <global>
+    <models>
+        <Abcv_catalog>
+             <class>Abcv_Catalog_Model</class>
+        </Abcv_catalog>
+    </models>
+    <events>
+      <checkout_cart_product_add_after>
+        <observers>
+          <Abcv_catalog_price_observer>
+            <type>singleton</type>
+            <class>Abcv_Catalog_Model_Price_Observer</class>
+            <method>updatePrice</method>
+          </Abcv_catalog_price_observer>
+        </observers>
+      </checkout_cart_product_add_after>     
+    </events>
+  </global>
+</config>

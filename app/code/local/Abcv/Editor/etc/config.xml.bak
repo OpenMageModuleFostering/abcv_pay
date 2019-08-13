@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Abcv_Editor>
+			<version>0.1.0</version>
+		</Abcv_Editor>
+	</modules>
+	<frontend>
+		<routers>
+			<editor>
+				<use>standard</use>
+				<args>
+					<module>Abcv_Editor</module>
+					<frontName>editor</frontName>
+				</args>
+			</editor>
+		</routers>
+		<layout>
+			<updates>
+				<editor>
+					<file>editor.xml</file>
+				</editor>
+			</updates>
+		</layout>
+	</frontend>
+	<admin>
+		<routers>
+			<editor>
+				<use>admin</use>
+				<args>
+					<module>Abcv_Editor</module>
+					<frontName>editor</frontName>
+				</args>
+			</editor>
+		</routers>
+	</admin>
+	<adminhtml>
+		<menu>
+			<editor module="editor">
+				<title>DYO</title>
+				<sort_order>71</sort_order>
+				<children>
+					<firstitem module="editor">
+						<title>Template Editor</title>
+						<sort_order>0</sort_order>
+						<action>editor/adminhtml_editor</action>
+					</firstitem>
+					<seconditem module="editor">
+						<title>Manage Category</title>
+						<sort_order>1</sort_order>
+						<action>editor/adminhtml_category/test</action>
+					</seconditem>
+					<!-- <thirditem module="editor"> <title>Manage Category old</title> 
+						<sort_order>2</sort_order> <action>editor/adminhtml_category</action> </thirditem> -->
+				</children>
+			</editor>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<editor translate="title" module="editor">
+							<!-- Name in Role Resources -->
+							<title>DYO</title>
+							<sort_order>10</sort_order>
+							<!-- add sub items -->
+							<children>
+								<firstitem translate="title" module="editor">
+									<title>Template Editor</title>
+									<sort_order>0</sort_order>
+									<action>editor/adminhtml_editor</action>
+								</firstitem>
+								<seconditem translate="title" module="editor">
+									<title>Manage Category</title>
+									<sort_order>1</sort_order>
+									<action>editor/adminhtml_category</action>
+								</seconditem>
+							</children>
+
+						</editor>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<editor>
+					<file>editor.xml</file>
+				</editor>
+			</updates>
+		</layout>
+	</adminhtml>
+	<global>
+		<models>
+			<editor>
+				<class>Abcv_Editor_Model</class>
+				<resourceModel>editor_mysql4</resourceModel>
+			</editor>
+			<editor_mysql4>
+				<class>Abcv_Editor_Model_Mysql4</class>
+				<entities>
+					<editor>
+						<table>editor</table>
+					</editor>
+				</entities>
+			</editor_mysql4>
+
+			<product>
+				<class>Abcv_Editor_Model</class>
+				<resourceModel>editor_mysql4</resourceModel>
+			</product>
+			<editor_mysql4>
+				<class>Abcv_Editor_Model_Mysql4</class>
+				<entities>
+					<product>
+						<table>abcv_product_save</table>
+					</product>
+				</entities>
+			</editor_mysql4>
+		</models>
+
+
+		<resources>
+			<editor_setup>
+				<setup>
+					<module>Abcv_Editor</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</editor_setup>
+			<editor_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</editor_write>
+			<editor_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</editor_read>
+		</resources>
+		<blocks>
+			<editor>
+				<class>Abcv_Editor_Block</class>
+			</editor>
+		</blocks>
+		<helpers>
+			<editor>
+				<class>Abcv_Editor_Helper</class>
+			</editor>
+		</helpers>
+		<rewrite>
+			
+			<fancy_url><!-- [product_url]/editor/[template_id]/[template_name] -->
+				<from><![CDATA[#^/?([-\A-Za-z0-9.]+)?/editor/([0-9]+)?/?([-\A-Za-z0-9._]+)?$#]]></from>
+				<to><![CDATA[/editor/index/template/template/$2/product/$1]]></to>
+				<complete>1</complete>
+			</fancy_url>
+			<cart_url><!-- [product_url]/editor_cart/[quote]/[template_id]/[template_name] -->
+				<from><![CDATA[#^/?([-\A-Za-z0-9.]+)?/editor_cart/([0-9]+)?/([0-9_]+)?/?(.*)?$#]]></from>
+				<to><![CDATA[/editor/index/template/template/$3/product/$2/editor/1]]></to>
+				<complete>1</complete>
+			</cart_url>
+			<save_url><!-- [product_url]/editor_save/[template_id]/[productstyle]/[save]/[template_name] -->
+				<from><![CDATA[#^/?([-\A-Za-z0-9.]+)?/editor_save/([0-9]+)?/?([-\A-Za-z0-9._]+)?/?([-\A-Za-z0-9._]+)?/?(.*)?$#]]></from>
+				<to><![CDATA[/editor/index/template/template/$2/product/$1/productstyle/$3/save/$4]]></to>
+				<complete>1</complete>
+			</save_url>
+			<editor_url>
+				<from><![CDATA[#^/editor/index/template/template/([-\A-Za-z0-9.]+)?/product/?([-\A-Za-z0-9.]+)?$#]]></from>
+				<to><![CDATA[/editor/index/template/template/$1/product/$2]]></to>
+				<complete>1</complete>
+			</editor_url>
+
+		</rewrite>
+	</global>
+</config>

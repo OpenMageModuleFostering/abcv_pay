@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <editor>
+            <children>
+                <!-- Here, I like to use the namespacename_modulename_controllername naming convention -->
+                <abcv_managecustom_custom translate="title" module="abcv_managecustom">
+                    <!-- This is how the menu text will be displayed -->
+                    <title>Manage Custom Field</title>
+					<sort_order>11</sort_order>
+                    <action>adminhtml/custom</action>
+                </abcv_managecustom_custom>
+            </children>
+        </editor>
+    </menu>
+     
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <!-- Same as above, but instead of referencing the config/menu node, you reference the acl/resources node of adminhtml.xml -->
+                    <sales>
+                        <children>
+                            <!-- Keep the same naming convention as above -->
+                            <abcv_managecustom_custom>
+                                <!-- This is how the ACL text will be displayed on System > Permissions > Roles > Role > Role Resources -->
+                                <title>Manage Custom Field</title>
+                            </abcv_managecustom_custom>
+                        </children>
+                    </sales>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

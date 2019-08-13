@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <abcv_managecustom>
+            <version>1.0.0</version>
+        </abcv_managecustom>
+    </modules>
+     
+    <global>
+        <helpers>
+            <abcv_managecustom>
+                <!-- This is where we define our helper directory -->
+                <class>Abcv_Managecustom_Helper</class>
+            </abcv_managecustom>
+        </helpers>
+                    
+        <blocks>
+            <abcv_managecustom>
+                <!-- Set a block definition and lookup directory -->
+                <class>Abcv_Managecustom_Block</class>
+            </abcv_managecustom>
+        </blocks>
+         
+        <models>
+            <abcv_managecustom>
+                <!-- This is where we define our model directory -->
+                <class>Abcv_Managecustom_Model</class>
+                <!-- Define a resource to create a custom table -->
+                <resourceModel>abcv_managecustom_mysql4</resourceModel>
+            </abcv_managecustom>
+             
+            <!-- Here's our resource model we'll use to create a database table -->
+            <abcv_managecustom_mysql4>
+                <class>Abcv_Managecustom_Model_Mysql4</class>
+                <entities>
+                    <!-- Let's define our table, we'll call it with the baz name, but the real table is abcv_managecustom_baz -->
+                    <!-- After we define our entity, we can call it with our model by calling abcv_managecustom/baz -->
+                    <custom>
+                        <table>sales_order_custom</table>
+                    </custom>
+                </entities>
+            </abcv_managecustom_mysql4>
+        </models>
+         
+        <!-- And finally we define our resource setup script -->
+        <resources>
+            <abcv_managecustom_setup>
+                <setup>
+                    <module>abcv_managecustom</module>
+                </setup>
+            </abcv_managecustom_setup>
+        </resources>
+    </global>
+     
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <!-- This is how we load our Adminhtml controllers -->
+                    <modules>
+                        <abcv_managecustom before="Mage_Adminhtml">Abcv_Managecustom_Adminhtml</abcv_managecustom>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+     
+    <adminhtml>
+        <layout>
+            <updates>
+                <abcv_managecustom>
+                    <!--
+                    We again keep a nice naming convention and make our module upgrade proof by placing it in a separate folder
+                    - Since we are in the adminhtml node, this will look for the XML file in the app/design/adminhtml/default/default root folder
+                    -->
+                    <file>abcv/managecustom.xml</file>
+                </abcv_managecustom>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

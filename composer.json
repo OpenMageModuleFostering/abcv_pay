@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/abcv_pay",
+    "name": "openmage-module-fostering\/abcv_pay",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Official Magento Plugin to connect to Payment Service Provider ABCV Pay",
     "authors": [
